@@ -49,3 +49,26 @@ Tipo produto
 
 
 https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/
+
+
+
+
+CREATE TABLE tb_cidade (
+ ID_CIDADE integer CONSTRAINT pk_id_cidade PRIMARY KEY,
+ NOME_CIDADE varchar(30) NOT NULL, 
+ UF varchar(40) NOT NULL
+);
+
+
+CREATE TABLE tb_bairro (
+ ID_bairro integer CONSTRAINT pk_id_bairro PRIMARY KEY,
+ Nome_bairro varchar(30) NOT NULL, 
+ FOREIGN KEY (Cidade) REFERENCES tb_cidade (ID_Cidade) ON DELETE CASCADE,
+);
+
+
+
+
+
+
+
